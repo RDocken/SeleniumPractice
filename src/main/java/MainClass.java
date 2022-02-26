@@ -1,0 +1,119 @@
+package main.java;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+
+
+public class MainClass {
+    public static WebDriver driver;
+    public static String Dress = "http://automationpractice.com/index.php";
+
+    @BeforeTest(groups = "current")
+    public void chromeSetup(){
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\chromedriver.exe");
+
+        //create ChromeOptions
+        ChromeOptions options = new ChromeOptions();
+
+        //add --headless option to ChromeOptions
+        options.addArguments("--headless");
+
+        //create a chrome webdriver with headless options added
+        driver = new ChromeDriver(options);
+
+    }
+
+//        @BeforeTest
+//    public void edgeSetup(){
+//        System.setProperty("webdriver.edge.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\msedgedriver.exe");
+//        driver = new EdgeDriver();
+//    }
+
+    @Test(groups = "current")
+    /*
+     *
+     *
+     *
+     * */
+    public void loginUsingXPath(){
+
+        //navigate to test website
+        driver.navigate().to(Dress);
+
+        //click on sign in button
+        driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")).click();
+
+        //enter email
+        driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("Docken.Ryan@gmail.com");
+
+        //enter password
+        driver.findElement(By.xpath("//*[@id=\"passwd\"]")).sendKeys("12345");
+
+        //click login
+        driver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]/span")).click();
+
+        //check to see if account name is equal to Ryan Docken
+        assert(driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a/span")).getText().equals("Ryan Docken"));
+    }
+
+
+    @Test()
+    /* This method uses chromedriver to find a dress on
+    *  the website using find by name and find by id
+    *
+    *
+    * */
+    public void dressSearchUsingName() throws InterruptedException {
+
+
+        //sends the driver to the webpage
+        driver.navigate().to(Dress);
+
+        //makes webpage fullscreen
+        driver.manage().window().maximize();
+
+        //find the search box and enters the keys into it
+        driver.findElement(By.id("search_query_top")).sendKeys("dress");
+
+        //clicks on the search button
+        driver.findElement(By.name("submit_search")).click();
+    }
+
+
+
+    @Test
+    /*
+    *
+    *
+    *
+    * */
+    public void addItemsToCart(){
+        //make fullscreen
+        driver.manage().window().maximize();
+
+        //navigate to test website
+        driver.navigate().to(Dress);
+
+        //click on dresses
+        driver.findElement(By.xpath("//*[@id=\"block_top_menu\"]/ul/li[2]/a")).click();
+
+        //click on summer dresses
+        driver.findElement(By.xpath("//*[@id=\"categories_block_left\"]/div/ul/li[3]/a")).click();
+
+        //click on dress
+        driver.findElement(By.xpath("//*[@id=\"center_column\"]/ul/li[3]/div/div[1]/div/a[1]/img")).click();
+
+        //add dress to cart
+        driver.findElement(By.xpath("//*[@id=\"add_to_cart\"]/button/span")).click();
+
+        //continue shopping
+        driver.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span/span")).click();
+
+    }
+}
