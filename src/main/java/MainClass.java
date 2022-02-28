@@ -24,14 +24,14 @@ public class MainClass {
         ChromeOptions options = new ChromeOptions();
 
         //add --headless option to ChromeOptions
-//        options.addArguments("--headless");
+        options.setHeadless(true);
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
 
         System.out.println("End of ubuntu setup");
     }
-//
+
 //    @BeforeTest(groups = "current")
 //    public void chromeSetup(){
 //        System.setProperty("webdriver.chrome.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\chromedriver.exe");
@@ -40,7 +40,7 @@ public class MainClass {
 //        ChromeOptions options = new ChromeOptions();
 //
 //        //add --headless option to ChromeOptions
-//        options.addArguments("--headless");
+//        options.setHeadless(true);
 //
 //        //create a chrome webdriver with headless options added
 //        driver = new ChromeDriver(options);
