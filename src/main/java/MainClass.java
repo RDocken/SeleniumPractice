@@ -65,9 +65,11 @@ public class MainClass {
 
         //navigate to test website
         driver.navigate().to(Dress);
+        System.out.println("sent to url");
 
         //click on sign in button
         driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a")).click();
+        System.out.println("found sign in button");
 
         //enter email
         driver.findElement(By.xpath("//*[@id=\"email\"]")).sendKeys("Docken.Ryan@gmail.com");
