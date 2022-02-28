@@ -24,7 +24,7 @@ public class MainClass {
         ChromeOptions options = new ChromeOptions();
 
         //add --headless option to ChromeOptions
-        options.addArguments("--headless");
+//        options.addArguments("--headless");
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
