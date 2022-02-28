@@ -16,7 +16,9 @@ public class MainClass {
 
     @BeforeTest(groups = "current")
     public void ubuntuSetup(){
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        System.out.println("Start of ubuntu setup");
+
+        System.setProperty("webdriver.chrome.driver", "/home/single/chromedriver");
 
         //create ChromeOptions
         ChromeOptions options = new ChromeOptions();
@@ -26,6 +28,8 @@ public class MainClass {
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
+
+        System.out.println("End of ubuntu setup");
     }
 //
 //    @BeforeTest(groups = "current")
@@ -56,6 +60,8 @@ public class MainClass {
      *
      * */
     public void loginUsingXPath(){
+        System.out.println("Start of login using xpath");
+
 
         //navigate to test website
         driver.navigate().to(Dress);
@@ -74,6 +80,7 @@ public class MainClass {
 
         //check to see if account name is equal to Ryan Docken
         assert(driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a/span")).getText().equals("Ryan Docken"));
+        System.out.println("end of login using xpath");
     }
 
 
