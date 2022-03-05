@@ -62,6 +62,7 @@ public class MainClass {
     public void loginUsingXPath(){
         System.out.println("Start of login using xpath");
 
+        System.out.println("Attempting to send to url: " + Dress);
         System.out.println("current url: " + driver.getCurrentUrl());
         //navigate to test website
         driver.navigate().to(Dress);
