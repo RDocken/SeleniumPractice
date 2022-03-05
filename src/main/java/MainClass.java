@@ -40,7 +40,7 @@ public class MainClass {
 //        ChromeOptions options = new ChromeOptions();
 //
 //        //add --headless option to ChromeOptions
-//        options.setHeadless(true);
+////        options.setHeadless(true);
 //
 //        //create a chrome webdriver with headless options added
 //        driver = new ChromeDriver(options);
@@ -62,9 +62,10 @@ public class MainClass {
     public void loginUsingXPath(){
         System.out.println("Start of login using xpath");
 
-
+        System.out.println("current url: " + driver.getCurrentUrl());
         //navigate to test website
         driver.navigate().to(Dress);
+        System.out.println("current url: " + driver.getCurrentUrl());
         System.out.println("sent to url");
 
         //click on sign in button
