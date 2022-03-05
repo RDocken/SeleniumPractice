@@ -46,7 +46,7 @@ public class MainClass {
 //        driver = new ChromeDriver(options);
 //
 //    }
-
+//
 //        @BeforeTest
 //    public void edgeSetup(){
 //        System.setProperty("webdriver.edge.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\msedgedriver.exe");
@@ -65,7 +65,7 @@ public class MainClass {
         System.out.println("Attempting to send to url: " + Dress);
         System.out.println("current url: " + driver.getCurrentUrl());
         //navigate to test website
-        driver.navigate().to(Dress);
+        driver.get(Dress);
         System.out.println("current url: " + driver.getCurrentUrl());
         System.out.println("sent to url");
 
