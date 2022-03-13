@@ -30,6 +30,7 @@ public class MainClass {
         //add --headless option to ChromeOptions
         options.setHeadless(true);
         options.addArguments("--verbose");
+        options.addArguments("--allowed-ips''");
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
