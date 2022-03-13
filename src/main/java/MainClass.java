@@ -23,6 +23,7 @@ public class MainClass {
 
         //attempt on jenkins
         System.setProperty("webdriver.chrome.driver", "/home/jenkins/tools/chromedriver/chromedriver");
+        System.setProperty("webdriver.chrome.whitelistedIps", "");
 
         //create ChromeOptions
         ChromeOptions options = new ChromeOptions();
@@ -30,7 +31,6 @@ public class MainClass {
         //add --headless option to ChromeOptions
         options.setHeadless(true);
         options.addArguments("--verbose");
-        options.addArguments("--allowed-ips''");
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
