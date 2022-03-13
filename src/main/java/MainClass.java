@@ -53,7 +53,7 @@ public class MainClass {
 //        driver = new EdgeDriver();
 //    }
 
-    @Test(groups = "current")
+    @Test(groups = "null")
     /*
      *
      *
