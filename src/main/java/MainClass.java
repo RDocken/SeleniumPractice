@@ -18,7 +18,7 @@ public class MainClass {
     public void ubuntuSetup(){
         System.out.println("Start of ubuntu setup");
 
-        System.setProperty("webdriver.chrome.driver", "/tmp/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/jenkins/tools/chromedriver");
 
         //create ChromeOptions
         ChromeOptions options = new ChromeOptions();
