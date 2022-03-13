@@ -11,7 +11,7 @@ import org.testng.annotations.Test;
 
 
 public class MainClass {
-    public static WebDriver driver;
+    public static ChromeDriver driver;
     public static String Dress = "http://automationpractice.com/index.php";
 
     @BeforeTest(groups = "current")
@@ -46,14 +46,14 @@ public class MainClass {
 //        driver = new ChromeDriver(options);
 //
 //    }
-//
+
 //        @BeforeTest
 //    public void edgeSetup(){
 //        System.setProperty("webdriver.edge.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\msedgedriver.exe");
 //        driver = new EdgeDriver();
 //    }
 
-    @Test(groups = "null")
+    @Test(groups = "current")
     /*
      *
      *
