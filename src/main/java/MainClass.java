@@ -29,6 +29,7 @@ public class MainClass {
 
         //add --headless option to ChromeOptions
         options.setHeadless(true);
+        options.addArguments("--verbose");
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
