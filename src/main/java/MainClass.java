@@ -1,6 +1,7 @@
 package main.java;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -22,6 +23,10 @@ public class MainClass {
 //        System.setProperty("webdriver.chrome.driver", "/home/single/chromedriver");
 
         //attempt on jenkins
+
+        Capabilities version = (( ChromeDriver) driver).getCapabilities();
+        System.out.println("Chrome version: " + version.getBrowserVersion());
+
         System.setProperty("webdriver.chrome.driver", "/home/jenkins/drivers/chromedriver");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
 
