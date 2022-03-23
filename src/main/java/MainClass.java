@@ -32,6 +32,8 @@ public class MainClass {
         options.setHeadless(true);
         options.addArguments("--verbose");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920x1080");
+        options.addArguments("--no-sandbox");
 
 
         //create a chrome webdriver with headless options added
