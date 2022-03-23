@@ -22,7 +22,7 @@ public class MainClass {
 //        System.setProperty("webdriver.chrome.driver", "/home/single/chromedriver");
 
         //attempt on jenkins
-        System.setProperty("webdriver.chrome.driver", "/home/jenkins/tools/chromedriver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "/home/jenkins/drivers/chromedriver");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
 
         //create ChromeOptions
