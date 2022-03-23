@@ -30,6 +30,7 @@ public class MainClass {
 
         //add --headless option to ChromeOptions
         options.addArguments("--no-sandbox");
+        options.setExperimentalOption("useAutomationExtension", false);
         options.setHeadless(true);
         options.addArguments("--verbose");
         options.addArguments("--disable-dev-shm-usage");
