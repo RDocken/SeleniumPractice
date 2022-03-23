@@ -24,8 +24,7 @@ public class MainClass {
 
         //attempt on jenkins
 
-        Capabilities version = ((ChromeDriver) driver).getCapabilities();
-        System.out.println("Chrome version: " + version.getCapabilityNames());
+
 
         System.setProperty("webdriver.chrome.driver", "/home/jenkins/drivers/chromedriver");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
@@ -43,6 +42,8 @@ public class MainClass {
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
+        Capabilities version = ((ChromeDriver) driver).getCapabilities();
+        System.out.println("Chrome version: " + version.getBrowserVersion());
 
         System.out.println("End of ubuntu setup");
     }
