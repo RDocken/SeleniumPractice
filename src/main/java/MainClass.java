@@ -24,8 +24,8 @@ public class MainClass {
 
         //attempt on jenkins
 
-        Capabilities version = (( ChromeDriver) driver).getCapabilities();
-        System.out.println("Chrome version: " + version.getBrowserVersion());
+        Capabilities version = ((ChromeDriver) driver).getCapabilities();
+        System.out.println("Chrome version: " + version.getCapabilityNames());
 
         System.setProperty("webdriver.chrome.driver", "/home/jenkins/drivers/chromedriver");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
