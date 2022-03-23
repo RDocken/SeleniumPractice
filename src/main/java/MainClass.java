@@ -29,11 +29,11 @@ public class MainClass {
         ChromeOptions options = new ChromeOptions();
 
         //add --headless option to ChromeOptions
+        options.addArguments("--no-sandbox");
         options.setHeadless(true);
         options.addArguments("--verbose");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920x1080");
-        options.addArguments("--no-sandbox");
 
 
         //create a chrome webdriver with headless options added
