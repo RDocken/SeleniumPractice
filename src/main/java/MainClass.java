@@ -10,20 +10,18 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
-
 public class MainClass {
     public static ChromeDriver driver;
     public static String Dress = "http://automationpractice.com/index.php";
 
     @BeforeTest(groups = "current")
-    public void ubuntuSetup(){
+    public void ubuntuSetup() {
         System.out.println("Start of ubuntu setup");
 
         //this works on vm
 //        System.setProperty("webdriver.chrome.driver", "/home/single/chromedriver");
 
         //attempt on jenkins
-
 
 
         System.setProperty("webdriver.chrome.driver", "/home/jenkins/drivers/chromedriver");
@@ -33,17 +31,23 @@ public class MainClass {
         ChromeOptions options = new ChromeOptions();
 
         //add --headless option to ChromeOptions
-        options.addArguments("--no-sandbox");
-        options.setHeadless(true);
-        options.addArguments("--verbose");
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--window-size=1920x1080");
-
+//        options.addArguments("--no-sandbox");
+//        options.setHeadless(true);
+//        options.addArguments("--verbose");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--window-size=1920x1080");
+        options.addArguments("--headless",
+                "--disable-gpu",
+                "--window-size=1920,1200",
+                "--ignore-certificate-errors",
+                "--disable-extensions",
+                "--no-sandbox",
+                "--disable-dev-shm-usage");
 
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
-        Capabilities version = ((ChromeDriver) driver).getCapabilities();
+        Capabilities version = driver.getCapabilities();
         System.out.println("Chrome version: " + version.getBrowserVersion());
 
         System.out.println("End of ubuntu setup");
@@ -76,7 +80,7 @@ public class MainClass {
      *
      *
      * */
-    public void loginUsingXPath(){
+    public void loginUsingXPath() {
         System.out.println("Start of login using xpath");
 
         System.out.println("Attempting to send to url: " + Dress);
@@ -100,17 +104,17 @@ public class MainClass {
         driver.findElement(By.xpath("//*[@id=\"SubmitLogin\"]/span")).click();
 
         //check to see if account name is equal to Ryan Docken
-        assert(driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a/span")).getText().equals("Ryan Docken"));
+        assert (driver.findElement(By.xpath("//*[@id=\"header\"]/div[2]/div/div/nav/div[1]/a/span")).getText().equals("Ryan Docken"));
         System.out.println("end of login using xpath");
     }
 
 
     @Test()
     /* This method uses chromedriver to find a dress on
-    *  the website using find by name and find by id
-    *
-    *
-    * */
+     *  the website using find by name and find by id
+     *
+     *
+     * */
     public void dressSearchUsingName() throws InterruptedException {
 
 
@@ -128,14 +132,13 @@ public class MainClass {
     }
 
 
-
     @Test
     /*
-    *
-    *
-    *
-    * */
-    public void addItemsToCart(){
+     *
+     *
+     *
+     * */
+    public void addItemsToCart() {
         //make fullscreen
         driver.manage().window().maximize();
 
