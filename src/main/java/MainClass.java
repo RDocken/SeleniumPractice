@@ -38,7 +38,7 @@ public class MainClass {
         options.addArguments("--verbose");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920x1080");
-        options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--remote-debugging-port=8080");
 
 
         //create a chrome webdriver with headless options added
