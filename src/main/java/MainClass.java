@@ -30,20 +30,11 @@ public class MainClass {
         //create ChromeOptions
         ChromeOptions options = new ChromeOptions();
 
-        //add --headless option to ChromeOptions
-//        options.addArguments("--no-sandbox");
-//        options.setHeadless(true);
-//        options.addArguments("--verbose");
-//        options.addArguments("--disable-dev-shm-usage");
-//        options.addArguments("--window-size=1920x1080");
-        options.addArguments("--headless",
-                "--disable-gpu",
-                "--window-size=1920,1200",
-                "--ignore-certificate-errors",
-                "--disable-extensions",
-                "--no-sandbox",
-                "--disable-dev-shm-usage");
-
+        options.addArguments("--no-sandbox");
+        options.setHeadless(true);
+        options.addArguments("--verbose");
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--window-size=1920x1080");
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
