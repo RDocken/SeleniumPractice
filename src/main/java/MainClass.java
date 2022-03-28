@@ -26,13 +26,15 @@ public class MainClass {
 
         //windows
 //        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\geckodriver.exe");
-
+          System.setProperty("webdriver.chrome.whitelistedIps", "");
 
 
 
         FirefoxOptions options = new FirefoxOptions();
-        options.addArguments("--headless");
         options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.setHeadless(true);
+        options.addArguments("--verbose");
 
         driver = new FirefoxDriver(options);
 
