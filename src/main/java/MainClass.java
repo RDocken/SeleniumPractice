@@ -8,6 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -175,5 +176,14 @@ public class MainClass {
         //continue shopping
         driver.findElement(By.xpath("//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/span/span")).click();
 
+    }
+
+    @AfterTest
+    public void teardown(){
+        System.out.println("Started teardown");
+
+        driver.quit();
+
+        System.out.println("Ended teardown");
     }
 }
