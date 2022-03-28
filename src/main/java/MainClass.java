@@ -6,43 +6,59 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
 public class MainClass {
     public static ChromeDriver driver;
+    public static FirefoxDriver firefoxDriver;
     public static String Dress = "http://automationpractice.com/index.php";
 
-    @BeforeTest(groups = "current")
-    public void ubuntuSetup() {
+    public void fireFoxSetup(){
         System.out.println("Start of ubuntu setup");
 
-        //this works on vm
-//        System.setProperty("webdriver.chrome.driver", "/home/single/chromedriver");
 
-        //attempt on jenkins
-
-
-        System.setProperty("webdriver.chrome.driver", "/home/jenkins/drivers/chromedriver");
+        System.setProperty("webdriver.gecko.driver", "/home/jenkins/drivers/geckodriver");
         System.setProperty("webdriver.chrome.whitelistedIps", "");
 
-        //create ChromeOptions
-        ChromeOptions options = new ChromeOptions();
-
-        options.addArguments("--no-sandbox");
-        options.setHeadless(true);
-        options.addArguments("--verbose");
-        options.addArguments("--disable-dev-shm-usage");
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
         options.addArguments("--window-size=1920x1080");
 
-        //create a chrome webdriver with headless options added
-        driver = new ChromeDriver(options);
-//        Capabilities version = driver.getCapabilities();
-//        System.out.println("Chrome version: " + version.getBrowserVersion());
+        firefoxDriver = new FirefoxDriver(options);
 
-        System.out.println("End of ubuntu setup");
     }
+
+
+//    @BeforeTest(groups = "current")
+//    public void ubuntuSetup() {
+//        System.out.println("Start of ubuntu setup");
+//
+//        //this works on vm
+////        System.setProperty("webdriver.chrome.driver", "/home/single/chromedriver");
+//
+//        System.setProperty("webdriver.chrome.driver", "/home/jenkins/drivers/chromedriver");
+//        System.setProperty("webdriver.chrome.whitelistedIps", "");
+//
+//        //create ChromeOptions
+//        ChromeOptions options = new ChromeOptions();
+//
+//        options.addArguments("--no-sandbox");
+//        options.setHeadless(true);
+//        options.addArguments("--verbose");
+//        options.addArguments("--disable-dev-shm-usage");
+//        options.addArguments("--window-size=1920x1080");
+//
+//        //create a chrome webdriver with headless options added
+//        driver = new ChromeDriver(options);
+////        Capabilities version = driver.getCapabilities();
+////        System.out.println("Chrome version: " + version.getBrowserVersion());
+//
+//        System.out.println("End of ubuntu setup");
+//    }
 
 //    @BeforeTest(groups = "current")
 //    public void chromeSetup(){
