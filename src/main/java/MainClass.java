@@ -34,6 +34,9 @@ public class MainClass {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--disable-dev-shm-usage");
         options.setHeadless(true);
+        options.addArguments("--verbose");
+        options.addArguments("--no-sandbox");
+
 
         driver = new FirefoxDriver(options);
 
