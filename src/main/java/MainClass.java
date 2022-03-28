@@ -35,11 +35,12 @@ public class MainClass {
         options.addArguments("--verbose");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920x1080");
+        options.addArguments("disable-gpu");
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
-        Capabilities version = driver.getCapabilities();
-        System.out.println("Chrome version: " + version.getBrowserVersion());
+//        Capabilities version = driver.getCapabilities();
+//        System.out.println("Chrome version: " + version.getBrowserVersion());
 
         System.out.println("End of ubuntu setup");
     }
