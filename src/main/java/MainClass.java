@@ -22,8 +22,14 @@ public class MainClass {
         System.out.println("Start of firefox setup");
 
 
+        //ubuntu
         System.setProperty("webdriver.gecko.driver", "/home/jenkins/drivers/geckodriver");
-        System.setProperty("webdriver.chrome.whitelistedIps", "");
+
+        //windows
+//        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\geckodriver.exe");
+
+
+
 
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
