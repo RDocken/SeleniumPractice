@@ -32,11 +32,7 @@ public class MainClass {
 
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
         options.setHeadless(true);
-        options.addArguments("--verbose");
-        options.addArguments("--proxy-server='direct://'");
-        options.addArguments("--proxy-bypass-list=*");
 
         driver = new FirefoxDriver(options);
 
