@@ -27,7 +27,7 @@ public class MainClass {
 
         //windows
 //        System.setProperty("webdriver.gecko.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\geckodriver.exe");
-          System.setProperty("webdriver.chrome.whitelistedIps", "");
+//          System.setProperty("webdriver.chrome.whitelistedIps", "");
 
 
 
