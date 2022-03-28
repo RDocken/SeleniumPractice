@@ -35,6 +35,8 @@ public class MainClass {
         options.addArguments("--no-sandbox");
         options.setHeadless(true);
         options.addArguments("--verbose");
+        options.addArguments("--proxy-server='direct://'");
+        options.addArguments("--proxy-bypass-list=*");
 
         driver = new FirefoxDriver(options);
 
