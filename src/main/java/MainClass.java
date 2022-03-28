@@ -13,8 +13,7 @@ import org.testng.annotations.Test;
 
 
 public class MainClass {
-    public static ChromeDriver driver;
-    public static FirefoxDriver firefoxDriver;
+    public static FirefoxDriver driver;
     public static String Dress = "http://automationpractice.com/index.php";
 
     @BeforeTest(groups = "current")
@@ -33,9 +32,9 @@ public class MainClass {
 
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless");
-        options.addArguments("--window-size=1920x1080");
 
-        firefoxDriver = new FirefoxDriver(options);
+        driver = new FirefoxDriver(options);
+
 
     }
 
@@ -87,6 +86,7 @@ public class MainClass {
 //        System.setProperty("webdriver.edge.driver", "C:\\Users\\Docke\\Desktop\\WebDrivers\\msedgedriver.exe");
 //        driver = new EdgeDriver();
 //    }
+
 
     @Test(groups = "current")
     /*
