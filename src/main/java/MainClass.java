@@ -35,7 +35,6 @@ public class MainClass {
         options.addArguments("--verbose");
         options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--window-size=1920x1080");
-        options.addArguments("disable-gpu");
 
         //create a chrome webdriver with headless options added
         driver = new ChromeDriver(options);
