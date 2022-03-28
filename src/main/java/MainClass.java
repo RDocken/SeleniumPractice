@@ -17,8 +17,9 @@ public class MainClass {
     public static FirefoxDriver firefoxDriver;
     public static String Dress = "http://automationpractice.com/index.php";
 
+    @BeforeTest(groups = "current")
     public void fireFoxSetup(){
-        System.out.println("Start of ubuntu setup");
+        System.out.println("Start of firefox setup");
 
 
         System.setProperty("webdriver.gecko.driver", "/home/jenkins/drivers/geckodriver");
